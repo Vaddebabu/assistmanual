@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assist-Admin and Assist-Leave User Manual</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        ul {
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+        li {
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 10px 0;
+            font-size: 16px;
+            color: #fff;
+            background-color: #0c0e0c;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .role-content {
+            display: none;
+        }
+        .role-content img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ccc;
+            margin: 10px 0;
+        }
+        .note {
+            font-style: italic;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Assist-Admin and Assist-Leave User Manual</h1>
+
+        <div class="section">
+            <h2>1. Overview</h2>
+            <p>The system includes five primary roles:</p>
+            <ul>
+                <li><button class="button" onclick="showContent('employee')">Employee</button></li>
+                <li><button class="button" onclick="showContent('admin')">Admin</button></li>
+                <li><button class="button" onclick="showContent('leaveAdmin')">Leave Admin</button></li>
+                <li><button class="button" onclick="showContent('leaveApprover')">Leave Approver</button></li>
+                <li><button class="button" onclick="showContent('worklogAdmin')">Worklog Admin</button></li>
+            </ul>
+        </div>
+
+        <!-- Role-Specific Sections -->
+        <div id="employee" class="role-content">
+            <h2>3.1 Employee</h2>
+            <p>Employees can add leaves and worklogs, view their own records, and filter/export data.</p>
+            <h4>Adding a Leave Request</h4>
+            <ol>
+                <li>On the dashboard, locate the Leave section. You can access this through the side menu or dashboard.</li>
+                <li>Click the <span class="button">+</span> icon at the top-right corner.</li>
+                <li>Fill in the required fields:
+                    <ul>
+                        <li>Leave Type</li>
+                        <li>Start Date</li>
+                        <li>End Date</li>
+                        <li>Description</li>
+                        <li>Approver Id (Select your approver from the list)</li>
+                        <li>Contact Information (Phone, Address)</li>
+                        <li>Etc required fields</li>
+                    </ul>
+                </li>
+                <li>Click Submit to send the leave request to your approver.</li>
+                <li>Once submitted, you can edit the request until it is approved or after rejection.</li>
+                <li>Once your request is approved, you are not able to edit; you can view only.</li>
+            </ol>
+            <img src="E:/assistmanual/add_record.png" alt="Adding Leave Request">
+            <img src="E:/assistmanual/leaveinfo.png"   alt="adding leaveinfo">
+            <h4>Viewing Leave Requests</h4>
+            <ol>
+                <li>On your dashboard, go to the Leave section.</li>
+                <li>View the status of your submitted leaves.</li>
+                <li>If a leave request is rejected, click the View button to see the approver’s comments or you may see in Edit also. You may revise and resubmit the leave request after viewing the comments.</li>
+            </ol>
+            <img src="E:/assistmanual/viewleave.png" alt="Viewing Leave Requests">
+            <h4>Adding a Worklog</h4>
+            <ol>
+                <li>Go to the Worklog section via the dashboard or sidebar.</li>
+                <li>Click the <span class="button">+</span> icon to add a new worklog.</li>
+                <li>Fill in the following fields:
+                    <ul>
+                        <li>Project</li>
+                        <li>Work Date</li>
+                        <li>Description</li>
+                        <li>Start Time</li>
+                        <li>End Time</li>
+                        <li>Etc …</li>
+                    </ul>
+                </li>
+                <li>Click Submit.</li>
+                <li>Worklogs cannot be edited for previous dates once submitted, but you can add new ones.</li>
+            </ol>
+            <img src="E:/assistmanual/worklogsadd.png" alt="Adding Worklog">
+            <h4>Filtering and Exporting Data</h4>
+            <ol>
+                <li>Click the Filter button to filter records by specific criteria (dates, projects, etc.).</li>
+                <li>Click the Export icon to export your data in a downloadable format (e.g., Excel).</li>
+            </ol>
+            <img src="E:/assistmanual/add_record.png" alt="Filtering and Exporting Data">
+        </div>
+
+        <div id="admin" class="role-content">
+            <h2>3.2 Admin</h2>
+            <!-- Admin-specific content here -->
+        </div>
+
+        <div id="leaveAdmin" class="role-content">
+            <h2>3.3 Leave Admin</h2>
+            <p>Leave Admins share many of the same responsibilities as Admins, but their focus is primarily on managing leave requests.</p>
+            <h4>Viewing and Managing Leave Requests</h4>
+            <ol>
+                <li>From your dashboard, access the Leave Requests section.</li>
+                <li>View leave requests from all employees across the organization.</li>
+                <li>Click on a request to view the details.</li>
+                <li>Approve or reject the leave as required, regardless of who the assigned approver is.</li>
+                <li>Add comments when rejecting a request.</li>
+            </ol>
+            <img src="E:/assistmanual/approverleaverequest.png" alt="Viewing and Managing Leave Requests">
+            <h4>Cannot Edit Leave Requests</h4>
+            <ol>
+                <li>Leave Admins have no permission to edit submitted leave requests.</li>
+                <li>They can only approve or reject leave requests.</li>
+            </ol>
+           
+        </div>
+
+        <div id="leaveApprover" class="role-content">
+            <h2>3.4 Leave Approver</h2>
+            <h4>Viewing Leave Requests</h4>
+            <ol>
+                <li>Go to the Leave Requests section of your dashboard.</li>
+                <li>Review all the pending leave requests from employees who have selected you as their approver.</li>
+            </ol>
+            <h4>Approving or Rejecting Leave</h4>
+            <ol>
+                <li>Select a leave request to view its details.</li>
+                <li>Click Approve or Reject.</li>
+                <li>Optionally, add comments to the request if you reject it, explaining your decision.</li>
+            </ol>
+            <img src="E:/assistmanual/approverleaverequest.png" alt="approve leave or reject ">
+            <h4>Viewing Worklogs</h4>
+            <ol>
+                <li>Navigate to the Worklog section from the dashboard or sidebar.</li>
+                <li>Leave Approvers can only view, not edit, these records.</li>
+            </ol>
+        </div>
+
+        <div id="worklogAdmin" class="role-content">
+            <h2>3.5 Worklog Admin</h2>
+            <h4>Managing Projects</h4>
+            <ol>
+                <li>Go to the Project Maintenance section from the sidebar.</li>
+                <li>Add, edit, or delete projects by clicking the corresponding buttons.</li>
+            </ol>
+            <h4>Adding a Worklog</h4>
+            <ol>
+                <li>Similar to employees, the Worklog Admin can add their own worklogs.</li>
+                <li>Go to the Worklog section and click the <span class="button">+</span> icon to add a new worklog.</li>
+                <li>Fill in the required details and submit.</li>
+            </ol>
+            <h4>Viewing and Editing Worklogs</h4>
+            <ol>
+                <li>From the Worklog section, view worklogs.</li>
+                <li>You can edit or delete any worklog as needed.</li>
+            </ol>
+        </div>
+
+        <h3>4. Dashboard Navigation</h3>
+        <p>Each role has access to a specific dashboard where the following options are available:</p>
+        <ul>
+            <li>Leaves: Manage your or others' leave requests (based on role).</li>
+            <li>Worklogs: Add or view worklogs.</li>
+            <li>Projects: Manage projects if you are an Admin or Worklog Admin.</li>
+            <li>Filters and Exports: Filter data and export records.</li>
+        </ul>
+
+        <h3>5. Notifications and Alerts</h3>
+        <ol>
+            <li>Whenever an employee submits a leave request, the assigned leave approver will receive a notification through an Email.</li>
+            <li>If a leave request is approved or rejected, the employee will receive an alert with the approver’s comments through an Email.</li>
+        </ol>
+
+        <h3>6. Logging Out</h3>
+        <ol>
+            <li>At the top-right corner of the dashboard, click on your profile icon.</li>
+            <li>Select sign out from the dropdown menu to exit the application.</li>
+        </ol>
+    </div>
+
+    <script>
+        function showContent(roleId) {
+            // Hide all role contents
+            document.querySelectorAll('.role-content').forEach(function(section) {
+                section.style.display = 'none';
+            });
+
+            // Show the selected role content
+            document.getElementById(roleId).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
